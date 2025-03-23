@@ -4,6 +4,7 @@
 
 # Files from IntelliJ #
 .idea/
+MOOCJava.iml
 
 # Log file
 *.log

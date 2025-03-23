@@ -24,6 +24,7 @@ public class Menu {
                 2. Display File Structure
                 3. Display Java Capitalization rules
                 4. Display System Reader
+                5. Display Number types
                 0. Exit
                 """);
         System.out.print("Enter your choice: ");
@@ -53,14 +54,17 @@ public class Menu {
                 Printing.javaCapitalizationRules();
                 break;
             case 4:
-                Printing.SystemReader();
+                Printing.scannerValueOf();
+                break;
+            case 5:
+                Printing.numTypes();
                 break;
             default:
                 System.out.printf("\n%sInvalid choice. Please try again.%s%n\n", RED, RESET);
         }
 
         if (choice != 0) {
-            System.out.print("Press enter to continue...\n");
+            System.out.print("Press enter to continue...");
             scanner.nextLine();
         } else {
             return false;

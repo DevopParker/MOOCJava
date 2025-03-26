@@ -1,5 +1,9 @@
 package part1;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
 import static part1.ConsoleColors.*;
 import static part1.FileStructureDisplay.*;
 
@@ -64,5 +68,19 @@ public class Printing {
                                   You can identify an irrational number by recognizing that it cannot be expressed as a fraction (p/q)
                                   with integers p and q, and its decimal representation is non-repeating and non-terminating
                 """);
+    }
+
+    public static void bashScript() {
+        System.out.println("""
+                Bash scripts are useful to build, run, and even clean up projects in a single command.
+                Combined with flags -f bash scripts can even run multiple commands within the script.
+                """);
+
+        List<String[]> table = new ArrayList<>();
+        table.add(new String[]{"Type", "Format", "Example", "Usage"});
+        table.add(new String[]{"Short", "-<letter>", "-h, -v, -r", "Single-letter flags or quick ops"});
+        table.add(new String[]{"Long", "--<word>", "--help, --clean, --run-only", "More descriptive, easier to read"});
+
+        FileStructureDisplay.printTable(table);
     }
 }

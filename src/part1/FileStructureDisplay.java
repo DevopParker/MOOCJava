@@ -1,6 +1,7 @@
 package part1;
 
 import static part1.ConsoleColors.*;
+import java.util.List;
 
 public class FileStructureDisplay {
 
@@ -66,6 +67,31 @@ public class FileStructureDisplay {
             boolean isLast = (i == files.length - 1);
             String prefix = isLast ? "│   └── " : "│   ├── ";
             sb.append(prefix + fileColor + files[i] + RESET + "\n");
+        }
+    }
+
+    public static void printTable(List<String[]> rows) {
+        if (rows.isEmpty()) return;
+
+        int columns = rows.getFirst().length;
+        int[] maxWidths = new int[columns];
+
+        // Find the max width of each column
+        for (String[] row : rows) {
+            for (int i = 0; i < columns; i++) {
+                if (row[i] != null && row[i].length() > maxWidths[i]) {
+                    maxWidths[i] = row[i].length();
+                }
+            }
+        }
+
+        // Print each row with dynamic formatting
+        for (String[] row : rows) {
+            for (int i = 0; i < columns; i++) {
+                int width = maxWidths[i] + 4; // +2 Add padding
+                System.out.printf("%-" + width + "s", row[i]);
+            }
+            System.out.println();
         }
     }
 }

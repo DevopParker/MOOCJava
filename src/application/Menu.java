@@ -25,6 +25,7 @@ public class Menu {
                 3. Display Java Capitalization rules
                 4. Display System Reader
                 5. Display Number types
+                6. Display Bash Script
                 0. Exit
                 """);
         System.out.print("Enter your choice: ");
@@ -58,6 +59,9 @@ public class Menu {
                 break;
             case 5:
                 Printing.numTypes();
+                break;
+            case 6:
+                Printing.bashScript();
                 break;
             default:
                 System.out.printf("\n%sInvalid choice. Please try again.%s%n\n", RED, RESET);

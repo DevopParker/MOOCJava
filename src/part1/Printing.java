@@ -10,7 +10,7 @@ import static part1.FileStructureDisplay.*;
 public class Printing {
 
     public static void boilerplate(String name) {
-        System.out.println("\nThis is the boilerplate code needed to run a Java program:\n");
+        System.out.println("This is the boilerplate code needed to run a Java program:\n");
         System.out.println(CodeColorizer.generateClassDef(name, CodeColorizer.generateMainClass()));
     }
 
@@ -26,7 +26,7 @@ public class Printing {
 
     public static void javaCapitalizationRules() {
         System.out.println("""
-                \nJava Capitalization Rules:
+                Java Capitalization Rules:
                 --------------------------
                 Class:      PascalCase
                 Interface:  PascalCase

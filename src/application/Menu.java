@@ -1,5 +1,6 @@
 package application;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 import part1.*;
 import static part1.ConsoleColors.*;
@@ -10,6 +11,7 @@ public class Menu {
         boolean running = true;
 
         while (running) {
+            clearConsole();
             displayMenuOptions();
             int choice = getUserChoice(scanner);
             running = processMenuChoice(choice, scanner);
@@ -41,6 +43,7 @@ public class Menu {
     }
 
     public static boolean processMenuChoice(int choice, Scanner scanner) {
+        clearConsole();
         switch (choice) {
             case 0:
                 System.out.println("Exiting program. Goodbye!");
@@ -74,5 +77,13 @@ public class Menu {
             return false;
         }
         return true;
+    }
+
+    public static void clearConsole() {
+//        for (int i = 0; i < 50; i++) {
+//            System.out.println();
+//        }
+        System.out.print("\033[H\033[2J");
+        System.out.flush();
     }
 }
